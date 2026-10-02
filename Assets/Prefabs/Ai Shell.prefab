@@ -124,12 +124,12 @@ GameObject:
   m_Component:
   - component: {fileID: 2104602759635128908}
   - component: {fileID: -5690804339676223100}
+  - component: {fileID: 3273099696965239992}
   - component: {fileID: -4466585550267642881}
-  - component: {fileID: -274293884725627443}
   - component: {fileID: 3567342948336435843}
   - component: {fileID: 4313123330132350833}
   m_Layer: 0
-  m_Name: Bullet
+  m_Name: Ai Shell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -167,6 +167,20 @@ MonoBehaviour:
   mass: 1
   drag: 1
   force: 2
+--- !u!114 &3273099696965239992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7187721675347851500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48f18604bb3a9a14d8ff5258fb4728df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AiShell
+  explosion: {fileID: 0}
+  damage: 1
 --- !u!114 &-4466585550267642881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,20 +193,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 258efc09f609e71479e778fd90625003, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestroyShell
---- !u!114 &-274293884725627443
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7187721675347851500}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fea7fd2e35e290e408d9580c7d85ede6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Shell
-  explosion: {fileID: 0}
-  damage: 1
 --- !u!136 &3567342948336435843
 CapsuleCollider:
   m_ObjectHideFlags: 0

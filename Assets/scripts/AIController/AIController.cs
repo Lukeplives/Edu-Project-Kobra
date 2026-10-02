@@ -11,6 +11,7 @@ public class AIController : MonoBehaviour
     [Header("Movement")]
     [SerializeField] private float moveSpeed = 3f;
     [SerializeField] private float nodeReachDistance = 0.05f;
+    [SerializeField] private float rotationSpeed = 5f;
 
     [Header("References")]
     [SerializeField] private AStarPathfindingOpt pathfindingOpt;
@@ -112,6 +113,7 @@ public class AIController : MonoBehaviour
 
         while (version == requestVersion && pathfinding.gameStatus != AStarPathfindingOpt.GameStatus.None)
         {
+            
             yield return null;
         }
 
@@ -151,10 +153,23 @@ public class AIController : MonoBehaviour
 
             while (version == requestVersion && Vector3.Distance(transform.position, targetPosition) > nodeReachDistance)
             {
+                Vector3 direction = targetPosition - transform.position;
+                direction.y = 0f;
+
+                if (direction.sqrMagnitude > 0.001f)
+                {
+                    Quaternion targetRotation = Quaternion.LookRotation(direction);
+
+                    transform.rotation = Quaternion.Slerp(
+                        transform.rotation,
+                        targetRotation,
+                        rotationSpeed * Time.deltaTime);
+                }
+
                 transform.position = Vector3.MoveTowards(
-                    transform.position,
-                    targetPosition,
-                    moveSpeed * Time.deltaTime);
+                transform.position,
+                targetPosition,
+                moveSpeed * Time.deltaTime);
 
                 yield return null;
             }
@@ -170,22 +185,6 @@ public class AIController : MonoBehaviour
 
         currentTargetNode = currentOriginNode;
     }
-
-    private AStarNodeOpt ResolveOriginNode()
-    {
-        if (movementRoutine != null && currentTargetNode != null)
-        {
-            return currentTargetNode;
-        }
-
-        if (currentOriginNode != null)
-        {
-            return currentOriginNode;
-        }
-
-        return FindClosestNode(transform.position);
-    }
-
     private AStarNodeOpt FindClosestNode(Vector3 position)
     {
         if (grid == null || grid.Count == 0)

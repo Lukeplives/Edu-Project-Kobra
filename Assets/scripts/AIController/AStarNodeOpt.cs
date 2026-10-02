@@ -16,14 +16,14 @@ public class AStarNodeOpt : MonoBehaviour
         text = GetComponentInChildren<TextMeshPro>();
     }
 
-    // O custo é calculado para todo o nó da lista aberta que possui o menor custo f
+    // O custo ï¿½ calculado para todo o nï¿½ da lista aberta que possui o menor custo f
     public void CalculateCost(AStarNodeOpt startNode, AStarNodeOpt endNode, float parentCost)
     {
         gCost = parentCost + 1;
         Vector3 dir = endNode.transform.position - transform.position;
         hCost = dir.sqrMagnitude;        
         fCost = gCost + hCost;
-        // gCost:F2 é o mesmo que escrever gCost.ToString("F2")
+        // gCost:F2 ï¿½ o mesmo que escrever gCost.ToString("F2")
         text.text = $"G: {gCost:F2}\nH: {hCost:F2}\nF: {fCost:F2}";
     }
 
@@ -38,19 +38,5 @@ public class AStarNodeOpt : MonoBehaviour
         gCost = hCost = fCost = 0f;
         text.text = string.Empty;
         neighbors.Clear();
-    }
-
-    private void OnMouseDown()
-    {
-        if (status == NodeStatus.Obstacle) return;
-        if (pathfinding.gameStatus == AStarPathfindingOpt.GameStatus.SelectStart)
-        {
-            pathfinding.SetStartNode(this);
-        }
-        else if(pathfinding.gameStatus == AStarPathfindingOpt.GameStatus.SelectEnd)
-        {
-            pathfinding.SetEndNode(this);
-        }
-        else { return; }
     }
 }
