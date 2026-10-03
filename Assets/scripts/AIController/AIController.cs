@@ -27,6 +27,14 @@ public class AIController : MonoBehaviour
     [SerializeField] private float fireRate = 1f;
     [SerializeField] private float cannonRotationSpeed = 2f;
 
+    [Header("Lost Target")]
+    [SerializeField] private float lostTargetCheckInterval = 1f;
+
+
+    private float nextLostTargetCheck;
+    private Vector3 lastKnownPlayerPosition;
+    private bool lostTargetShot;
+
     private float nextFireTime;
 
     private List<AStarNodeOpt> grid;
@@ -40,6 +48,8 @@ public class AIController : MonoBehaviour
 
     private int currentPatrolIndex;
     private bool patrolActive;
+    private bool searchFinished;
+    
 
     private void Awake()
     {
@@ -276,6 +286,10 @@ public class AIController : MonoBehaviour
             return;
 
         playerNode = null;
+        lostTargetShot = false;
+        nextLostTargetCheck = 0f;
+
+        lastKnownPlayerPosition = target.position;
     }
 
     public void UpdatePursue()
@@ -317,7 +331,7 @@ public class AIController : MonoBehaviour
 
     private void RotateCannon()
     {
-        float? angle = CalculateAngle(true);
+        float? angle = CalculateAngle(target.position, true);
 
         if (angle == null)
             return;
@@ -332,7 +346,7 @@ public class AIController : MonoBehaviour
             targetRotation,
             cannonRotationSpeed * Time.deltaTime);
     }
-    private float? CalculateAngle(bool low)
+    private float? CalculateAngle(Vector3 targetPosition, bool low)
     {
         Vector3 targetDir = target.position - cannon.position;
 
@@ -395,4 +409,70 @@ public class AIController : MonoBehaviour
             targetRotation,
             rotationSpeed * Time.deltaTime);
     }
+
+    public void UpdateLastKnownPosition()
+    {
+        if (target == null)
+            return;
+
+        lastKnownPlayerPosition = target.position;
+    }
+
+    public bool ShouldSearchForPlayer()
+    {
+        if (lostTargetShot)
+            return false;
+
+        if (Time.time < nextLostTargetCheck)
+            return false;
+
+        nextLostTargetCheck = Time.time + lostTargetCheckInterval;
+
+        return true;
+    }
+
+
+    public void StartSearch()
+    {
+        searchFinished = false;
+
+        FireAtPosition(lastKnownPlayerPosition);
+
+        searchFinished = true;
+    }
+
+    public bool HasFinishedSearch()
+    {
+        return searchFinished;
+    }
+    private void FireAtPosition(Vector3 position)
+    {
+        Vector3 direction = position - transform.position;
+        direction.y = 0f;
+
+        if (direction.sqrMagnitude > 0.001f)
+        {
+            transform.rotation = Quaternion.LookRotation(direction);
+        }
+
+        float? angle = CalculateAngle(position, true);
+
+        if (angle == null)
+            return;
+
+        cannon.localRotation = Quaternion.Euler(
+            360f - angle.Value,
+            0f,
+            0f);
+
+        GameObject shell = Instantiate(
+            bulletPrefab,
+            bulletSpawn.position,
+            bulletSpawn.rotation);
+
+        Rigidbody rb = shell.GetComponent<Rigidbody>();
+
+        rb.linearVelocity = bulletSpeed * cannon.forward;
+    }
+
 }

@@ -18,17 +18,22 @@ public class PursueBehavior : StateMachineBehaviour
     {
 
         controller.AiController.UpdatePursue();
-        
+        if (controller.CanSeePlayer())
+        {
+            controller.AiController.UpdateLastKnownPosition();
+            return;
+        }
+        if (controller.AiController.ShouldSearchForPlayer())
+        {
+            anim.SetTrigger("IsSearching");
+        }
+
         if (controller.CanAttackPlayer())
         {
             anim.SetTrigger("IsAttacking");
             return;
         }
 
-        if (!controller.CanSeePlayer())
-        {
-            anim.SetTrigger("IsPatrolling");
-        }
     }
 
     public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
