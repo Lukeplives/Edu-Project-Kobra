@@ -32977,7 +32977,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2079253918}
   - component: {fileID: 2079253917}
-  - component: {fileID: 2079253919}
   - component: {fileID: 2079253920}
   m_Layer: 0
   m_Name: Enemy
@@ -33009,6 +33008,7 @@ MonoBehaviour:
   rotationSpeed: 5
   pathfindingOpt: {fileID: 488419836}
   target: {fileID: 1818780905}
+  enemyData: {fileID: 11400000, guid: 8a158eeff9ebab044ac0f5314703c1d1, type: 2}
   bulletPrefab: {fileID: 7187721675347851500, guid: 50833bd96489999419c8d30c587938af, type: 3}
   bulletSpawn: {fileID: 758268773}
   cannon: {fileID: 833143334}
@@ -33034,27 +33034,6 @@ Transform:
   - {fileID: 2015051388}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2079253919
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2079253916}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4bcdc2b8cbd321f4aa50a8e43f8896de, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AiTank
-  bulletPrefab: {fileID: 7187721675347851500, guid: 50833bd96489999419c8d30c587938af, type: 3}
-  bulletSpawn: {fileID: 758268772}
-  enemy: {fileID: 1818780901}
-  cannon: {fileID: 833143334}
-  rotationSpeed: 2
-  speed: 15
-  moveSpeed: 3
-  fireRate: 1
-  detectionRange: 5
 --- !u!114 &2079253920
 MonoBehaviour:
   m_ObjectHideFlags: 0

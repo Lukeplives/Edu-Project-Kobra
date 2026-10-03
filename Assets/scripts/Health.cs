@@ -5,7 +5,7 @@ public class Health : MonoBehaviour
     private int _healthCount;
     public int HealthCount => _healthCount;
 
-    [SerializeField] int maxHealth = 5;
+    public int maxHealth = 5;
     void Start()
     {
         _healthCount = maxHealth;

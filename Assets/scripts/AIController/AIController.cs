@@ -18,6 +18,8 @@ public class AIController : MonoBehaviour
     [SerializeField] private AStarPathfindingOpt pathfindingOpt;
     [SerializeField] private Transform target;
     public Transform Target => target;
+    [SerializeField] private EnemyData enemyData;
+    private Health health;
 
     [Header("Combat")]
     [SerializeField] private GameObject bulletPrefab;
@@ -61,6 +63,13 @@ public class AIController : MonoBehaviour
         if (mainCamera == null)
         {
             mainCamera = Camera.main;
+        }
+
+        health.GetComponent<Health>();
+
+        if(health != null && enemyData != null)
+        {
+            health.maxHealth = enemyData.Heatlh;
         }
     }
 
