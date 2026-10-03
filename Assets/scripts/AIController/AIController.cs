@@ -7,6 +7,7 @@ public class AIController : MonoBehaviour
     [Header("References")]
     [SerializeField] private AStarPathfindingOpt pathfinding;
     [SerializeField] private Camera mainCamera;
+    [SerializeField] private AStarNodeOpt[] patrolPoints;
 
     [Header("Movement")]
     [SerializeField] private float moveSpeed = 3f;
@@ -16,14 +17,29 @@ public class AIController : MonoBehaviour
     [Header("References")]
     [SerializeField] private AStarPathfindingOpt pathfindingOpt;
     [SerializeField] private Transform target;
+    public Transform Target => target;
+
+    [Header("Combat")]
+    [SerializeField] private GameObject bulletPrefab;
+    [SerializeField] private Transform bulletSpawn;
+    [SerializeField] private Transform cannon;
+    [SerializeField] private float bulletSpeed = 15f;
+    [SerializeField] private float fireRate = 1f;
+    [SerializeField] private float cannonRotationSpeed = 2f;
+
+    private float nextFireTime;
 
     private List<AStarNodeOpt> grid;
     private Coroutine pathRequestRoutine;
     private Coroutine movementRoutine;
     private AStarNodeOpt currentOriginNode;
+    private AStarNodeOpt currentPatrolPoint;
     private AStarNodeOpt currentTargetNode;
     private AStarNodeOpt playerNode;
     private int requestVersion;
+
+    private int currentPatrolIndex;
+    private bool patrolActive;
 
     private void Awake()
     {
@@ -62,22 +78,6 @@ public class AIController : MonoBehaviour
         currentTargetNode = currentOriginNode;
     }
 
-    private void Update()
-    {
-        if (target == null)
-            return;
-
-        AStarNodeOpt targetNode = FindClosestNode(target.position);
-
-        if (targetNode == null)
-            return;
-
-        if (targetNode != playerNode)
-        {
-            playerNode = targetNode;
-            RequestPath(targetNode);
-        }
-    }
 
     private void RequestPath(AStarNodeOpt destinationNode)
     {
@@ -213,5 +213,186 @@ public class AIController : MonoBehaviour
         }
 
         return closestNode;
+    }
+
+    public void StartPatrol()
+    {
+        if (patrolPoints == null || patrolPoints.Length == 0)
+            return;
+
+        patrolActive = true;
+
+        currentPatrolIndex = 0;
+        currentPatrolPoint = patrolPoints[currentPatrolIndex];
+
+        RequestPath(currentPatrolPoint);
+    }
+
+    public void NextPatrolPoint()
+    {
+        if (!patrolActive || patrolPoints == null || patrolPoints.Length == 0)
+            return;
+
+        currentPatrolIndex++;
+
+        if (currentPatrolIndex >= patrolPoints.Length)
+            currentPatrolIndex = 0;
+
+        currentPatrolPoint = patrolPoints[currentPatrolIndex];
+
+        RequestPath(currentPatrolPoint);
+    }
+
+    public void StopMovement()
+    {
+        patrolActive = false;
+
+        requestVersion++;
+
+        if (pathRequestRoutine != null)
+            StopCoroutine(pathRequestRoutine);
+
+        if (movementRoutine != null)
+            StopCoroutine(movementRoutine);
+
+        pathRequestRoutine = null;
+        movementRoutine = null;
+    }
+    public bool HasReachedPatrolPoint()
+    {
+        if (currentPatrolPoint == null)
+            return false;
+
+        Vector3 targetPosition = currentPatrolPoint.transform.position;
+        targetPosition.y = transform.position.y;
+
+        return Vector3.Distance(
+            transform.position,
+            targetPosition) <= nodeReachDistance;
+    }
+    public void StartPursue()
+    {
+        if (target == null)
+            return;
+
+        playerNode = null;
+    }
+
+    public void UpdatePursue()
+    {
+        if (target == null)
+            return;
+
+        AStarNodeOpt targetNode = FindClosestNode(target.position);
+
+        if (targetNode == null)
+            return;
+
+        if (targetNode != playerNode)
+        {
+            playerNode = targetNode;
+            RequestPath(targetNode);
+        }
+    }
+
+    public void StartAttack()
+    {
+        nextFireTime = 0f;
+    }
+
+    public void UpdateAttack()
+    {
+        if(target == null)
+            return;
+        
+        RotateTowardsPlayer();
+        RotateCannon();
+
+        if(Time.time >= nextFireTime)
+        {
+            Fire();
+            nextFireTime = Time.time + fireRate;
+        }
+    }
+
+    private void RotateCannon()
+    {
+        float? angle = CalculateAngle(true);
+
+        if (angle == null)
+            return;
+
+        Quaternion targetRotation = Quaternion.Euler(
+            360f - angle.Value,
+            0f,
+            0f);
+
+        cannon.localRotation = Quaternion.Slerp(
+            cannon.localRotation,
+            targetRotation,
+            cannonRotationSpeed * Time.deltaTime);
+    }
+    private float? CalculateAngle(bool low)
+    {
+        Vector3 targetDir = target.position - cannon.position;
+
+        float y = targetDir.y;
+
+        targetDir.y = 0f;
+
+        float x = targetDir.magnitude - 1f;
+
+        float gravity = 9.81f;
+        float speedSqr = bulletSpeed * bulletSpeed;
+
+        float underTheRoot =
+            speedSqr * speedSqr -
+            gravity * (gravity * x * x + 2f * y * speedSqr);
+
+        if (underTheRoot < 0f)
+            return null;
+
+        float root = Mathf.Sqrt(underTheRoot);
+
+        float highAngle = speedSqr + root;
+        float lowAngle = speedSqr - root;
+
+        float angle;
+
+        if (low)
+            angle = Mathf.Atan2(lowAngle, gravity * x) * Mathf.Rad2Deg;
+        else
+            angle = Mathf.Atan2(highAngle, gravity * x) * Mathf.Rad2Deg;
+
+        return angle;
+    }
+    private void Fire()
+    {
+        GameObject shell = Instantiate(
+            bulletPrefab,
+            bulletSpawn.position,
+            bulletSpawn.rotation);
+
+        Rigidbody rb = shell.GetComponent<Rigidbody>();
+
+        rb.linearVelocity = bulletSpeed * cannon.forward;
+    }
+    private void RotateTowardsPlayer()
+    {
+        if (target == null)
+            return;
+
+        Vector3 direction = target.position - transform.position;
+        direction.y = 0f;
+
+        if (direction.sqrMagnitude <= 0.001f)
+            return;
+
+        Quaternion targetRotation = Quaternion.LookRotation(direction);
+
+        transform.rotation = Quaternion.Slerp(
+            transform.rotation,
+            targetRotation,
+            rotationSpeed * Time.deltaTime);
     }
 }

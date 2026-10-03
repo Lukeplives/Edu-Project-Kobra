@@ -66,7 +66,7 @@ public class AiTank : MonoBehaviour
 
     void Update()
     {
-        if(enemy != null)
+        if(enemy == null)
             return;
         float distance = Vector3.Distance(transform.position, enemy.transform.position);
 
