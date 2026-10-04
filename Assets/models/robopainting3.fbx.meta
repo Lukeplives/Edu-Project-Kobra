@@ -3,7 +3,177 @@ guid: d341f83fedfd9c24c8cd5679b59dedd4
 ModelImporter:
   serializedVersion: 24300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Base
+    second: {fileID: 2100000, guid: a280fa05feea26d4c9abea789bf6ad22, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CXtopobase
+    second: {fileID: 2100000, guid: 5d3e374df618955408c2a7fdd5783e40, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Topo
+    second: {fileID: 2100000, guid: a9eb6366f35038546b81f4414781ded2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cilindro junta es
+    second: {fileID: 2100000, guid: 5bdb079d56326734aa735b774439ec25, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cilindro pe esquerdo
+    second: {fileID: 2100000, guid: 562819b162496b74e833f89a82ee970f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cilindro2
+    second: {fileID: 2100000, guid: 49c23bf8ec5a83b43a9ceb20558ecb37, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cilindrojunta
+    second: {fileID: 2100000, guid: 94117290a0b277240868dee3f3c33342, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cilindrojuntameioesq
+    second: {fileID: 2100000, guid: 2c5f9928e76f53842b15cd52a98e7c3b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cilindrojuntatrasesquerd
+    second: {fileID: 2100000, guid: 30beb8099eae93c459422db4029b404a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cilindromeiodireta
+    second: {fileID: 2100000, guid: 9115804762007554da43a0f6723b2f3e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cilindromeioesquer
+    second: {fileID: 2100000, guid: ebd13a733df6e024485eb7ca73b0c38d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cilindrotrasdireita
+    second: {fileID: 2100000, guid: 7d20f3f4062cd954da9e89b2d73d2cef, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cilindrotrasesquerda
+    second: {fileID: 2100000, guid: 7288a2ebae3dd6246a3337e2a0f2ad52, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cilinjuntatrasdireita
+    second: {fileID: 2100000, guid: d0b2c07b031b2cf439e29b16558c1362, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: clindrodiretmeio
+    second: {fileID: 2100000, guid: d770740752a75bf4e8770ea7adac1253, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: detalhe CX
+    second: {fileID: 2100000, guid: 232809a1ab7862c4cb163af5b131c180, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: frentediretitpe
+    second: {fileID: 2100000, guid: c174ca2ac8105264bbe4c955c1f38ca3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: junta diretofrente
+    second: {fileID: 2100000, guid: 8aebcfc9452c05841a458e677606d39e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: juntadiretatras
+    second: {fileID: 2100000, guid: b4b5cdea1a02dba449870304e5608b65, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: juntaesqeurtras
+    second: {fileID: 2100000, guid: 570efc5241bc53f49b4010afb6ce39fc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: juntapediretafrente
+    second: {fileID: 2100000, guid: fe1275eb68853484d8715da5616427ef, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: juntapediretatras
+    second: {fileID: 2100000, guid: b4b5cdea1a02dba449870304e5608b65, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: juntapediretfrente
+    second: {fileID: 2100000, guid: 0fa620141b81f92449ca8c0ba250423d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: juntapeesquerdo
+    second: {fileID: 2100000, guid: 3c1521f7ce572734d9299be9aac46ecc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: juntapemeiodireita_
+    second: {fileID: 2100000, guid: a4eb24f23b0a20146afa698f67630c04, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: juntapetrasesquerda
+    second: {fileID: 2100000, guid: 7fb3168d573e98b44a65d3643d1d087d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: jutadireitameio
+    second: {fileID: 2100000, guid: 69120d0dc72d32a44852a039fc8ccca2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: peesfrente
+    second: {fileID: 2100000, guid: 3cf5478bd10e01645b4b0dac6d104560, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pemeiodireito
+    second: {fileID: 2100000, guid: 43d4fb32811dbde47bb1fd157ca936bd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pemeioesquer
+    second: {fileID: 2100000, guid: 595aaa9db4a46094a8bc8ad25b65d8fe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: petrasdiretia
+    second: {fileID: 2100000, guid: 055089adb2d479b44ba04f47a0dc81cd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: petrasesquerda
+    second: {fileID: 2100000, guid: 31a7287653968774abcf917112d1fa53, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "p\xE9 esmeio"
+    second: {fileID: 2100000, guid: c0653338043a37a48bf6b43d5f945d94, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "p\xE9juntaesfrente"
+    second: {fileID: 2100000, guid: f06f5529df1193f48b60133d7826479d, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
