@@ -43,6 +43,7 @@ public class PursueBehavior : StateMachineBehaviour
     {
         anim.ResetTrigger("IsAttacking");
         anim.ResetTrigger("IsPatrolling");
+        anim.ResetTrigger("IsSearching");
         controller.AiController.StopMovement();
     }
 }

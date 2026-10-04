@@ -31,7 +31,6 @@ public class PatrolBehavior : StateMachineBehaviour
     {
         anim.ResetTrigger("IsPursuing");
         controller.AiController.StopMovement();
-
     }
 
 }

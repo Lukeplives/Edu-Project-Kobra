@@ -21,6 +21,12 @@ public class SearchBehavior : StateMachineBehaviour
         AnimatorStateInfo stateInfo,
         int layerIndex)
     {
+        if (controller.CanSeePlayer())
+        {
+            anim.SetTrigger("IsPursuing");
+            return;
+        }
+
         if (controller.AiController.HasFinishedSearch())
         {
             anim.SetTrigger("IsPatrolling");
@@ -32,6 +38,7 @@ public class SearchBehavior : StateMachineBehaviour
         AnimatorStateInfo stateInfo,
         int layerIndex)
     {
+        anim.ResetTrigger("IsPursuing");
         anim.ResetTrigger("IsPatrolling");
     }
 }

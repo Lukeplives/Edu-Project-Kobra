@@ -28,8 +28,9 @@ public class AIController : MonoBehaviour
 
     [Header("Lost Target")]
     [SerializeField] private float lostTargetCheckInterval = 1f;
+    [SerializeField] private float searchDuration = 3f;
 
-
+    private float searchEndTime;
     private float nextLostTargetCheck;
     private Vector3 lastKnownPlayerPosition;
     private bool lostTargetShot;
@@ -429,14 +430,23 @@ public class AIController : MonoBehaviour
     {
         searchFinished = false;
 
-        FireAtPosition(lastKnownPlayerPosition);
+        searchEndTime = Time.time + searchDuration;
 
-        searchFinished = true;
+        FireAtPosition(lastKnownPlayerPosition);
     }
 
     public bool HasFinishedSearch()
     {
-        return searchFinished;
+        if (searchFinished)
+        return true;
+
+        if (Time.time >= searchEndTime)
+        {
+            searchFinished = true;
+            return true;
+        }
+
+        return false;
     }
     private void FireAtPosition(Vector3 position)
     {

@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyData
   enemyName: Enemy 3
   Heatlh: 7
-  moveSpeed: 1
+  moveSpeed: 2
   fireRate: 2
   enemyMaterial: {fileID: 0}

@@ -7,7 +7,6 @@ public class FSMAIController : MonoBehaviour
 
     [Header("Detection")]
 
-    [SerializeField] private float attackDistance = 7f;
     [SerializeField] private float detectionRadius = 15f;
 
     [SerializeField] private float visionCheckInterval = 0.5f;
@@ -44,6 +43,9 @@ public class FSMAIController : MonoBehaviour
         if (AiController.Target == null)
             return false;
 
+        if (!CanSeePlayer())
+            return false;
+
         return CanHitTarget();
     }
         public bool CanHitTarget()
@@ -58,12 +60,6 @@ public class FSMAIController : MonoBehaviour
     {
         direction.Normalize();
 
-            Debug.DrawRay(
-        transform.position,
-        direction * distance,
-        playerVisible ? Color.green : Color.red
-    );
-
         if (Physics.Raycast(
             transform.position,
             direction,
@@ -71,9 +67,13 @@ public class FSMAIController : MonoBehaviour
             distance,
             visionLayer))
         {
+            Debug.Log("Raycast atingiu: " + hit.transform.name);
+
             return hit.transform == AiController.Target ||
                 hit.transform.IsChildOf(AiController.Target);
         }
+
+        Debug.Log("Raycast não atingiu nada.");
 
         return false;
     }
