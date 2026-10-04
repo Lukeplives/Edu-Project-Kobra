@@ -23,8 +23,4 @@ public class AiShell : MonoBehaviour
         }
     }
 
-    void Update()
-    {
-        transform.forward = body.linearVelocity;
-    }
 }

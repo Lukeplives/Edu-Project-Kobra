@@ -24,6 +24,8 @@ public class MoveShell : MonoBehaviour {
     {
         speed *= (1 - Time.deltaTime * drag);
         ySpeed += gravityAcceleration * Time.deltaTime * 0.01f;
-        transform.Translate(speed * Time.deltaTime, ySpeed, 0);
+
+        transform.position += transform.forward * speed * Time.deltaTime;
+        transform.position += Vector3.up * ySpeed;
     }
 }

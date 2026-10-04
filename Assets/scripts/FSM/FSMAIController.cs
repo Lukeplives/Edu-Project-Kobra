@@ -44,14 +44,14 @@ public class FSMAIController : MonoBehaviour
         if (AiController.Target == null)
             return false;
 
-        Vector3 direction = AiController.Target.position - transform.position;
+        return CanHitTarget();
+    }
+        public bool CanHitTarget()
+    {
+        if (AiController.Target == null)
+            return false;
 
-        if (direction.magnitude < attackDistance)
-        {
-            return true;
-        }
-
-        return false;
+        return AiController.CalculateAngle(AiController.Target.position, true) != null;
     }
 
     private bool CheckLineOfSight(Vector3 direction, float distance)

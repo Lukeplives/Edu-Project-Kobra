@@ -6,7 +6,6 @@ public class AIController : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private AStarPathfindingOpt pathfinding;
-    [SerializeField] private Camera mainCamera;
     [SerializeField] private AStarNodeOpt[] patrolPoints;
 
     [Header("Movement")]
@@ -44,7 +43,6 @@ public class AIController : MonoBehaviour
     private Coroutine movementRoutine;
     private AStarNodeOpt currentOriginNode;
     private AStarNodeOpt currentPatrolPoint;
-    private AStarNodeOpt currentTargetNode;
     private AStarNodeOpt playerNode;
     private int requestVersion;
 
@@ -60,17 +58,20 @@ public class AIController : MonoBehaviour
             pathfinding = FindFirstObjectByType<AStarPathfindingOpt>();
         }
 
-        if (mainCamera == null)
+
+        if(enemyData != null)
         {
-            mainCamera = Camera.main;
+            health = GetComponent<Health>();
+
+            if(health != null)
+            {
+                health.maxHealth = enemyData.Heatlh;
+            }
+            
+            fireRate = enemyData.fireRate;
+            moveSpeed = enemyData.moveSpeed;
         }
 
-        health.GetComponent<Health>();
-
-        if(health != null && enemyData != null)
-        {
-            health.maxHealth = enemyData.Heatlh;
-        }
     }
 
     private void Start()
@@ -82,19 +83,11 @@ public class AIController : MonoBehaviour
             return;
         }
 
-        if (mainCamera == null)
-        {
-            Debug.LogError("AIController requires a camera reference to read mouse clicks.", this);
-            enabled = false;
-            return;
-        }
-
         grid = pathfinding.grid != null && pathfinding.grid.Count > 0
             ? pathfinding.grid
             : new List<AStarNodeOpt>(FindObjectsByType<AStarNodeOpt>(FindObjectsSortMode.None));
 
         currentOriginNode = FindClosestNode(transform.position);
-        currentTargetNode = currentOriginNode;
     }
 
 
@@ -113,7 +106,7 @@ public class AIController : MonoBehaviour
         }
 
         currentOriginNode = FindClosestNode(transform.position);
-        currentTargetNode = currentOriginNode;
+
 
         pathRequestRoutine = StartCoroutine(
             RequestPathRoutine(destinationNode, requestVersion));
@@ -143,7 +136,7 @@ public class AIController : MonoBehaviour
 
         if (pathfinding.path == null || pathfinding.path.Count == 0)
         {
-            currentTargetNode = currentOriginNode;
+
             yield break;
         }
 
@@ -158,12 +151,10 @@ public class AIController : MonoBehaviour
         }
 
         currentOriginNode = path[0];
-        currentTargetNode = currentOriginNode;
 
         for (int i = 1; i < path.Count; i++)
         {
             AStarNodeOpt nextNode = path[i];
-            currentTargetNode = nextNode;
 
             Vector3 targetPosition = new Vector3(
                 nextNode.transform.position.x,
@@ -202,7 +193,6 @@ public class AIController : MonoBehaviour
             currentOriginNode = nextNode;
         }
 
-        currentTargetNode = currentOriginNode;
     }
     private AStarNodeOpt FindClosestNode(Vector3 position)
     {
@@ -355,9 +345,9 @@ public class AIController : MonoBehaviour
             targetRotation,
             cannonRotationSpeed * Time.deltaTime);
     }
-    private float? CalculateAngle(Vector3 targetPosition, bool low)
+    public float? CalculateAngle(Vector3 targetPosition, bool low)
     {
-        Vector3 targetDir = target.position - cannon.position;
+        Vector3 targetDir = targetPosition - cannon.position;
 
         float y = targetDir.y;
 
@@ -391,14 +381,10 @@ public class AIController : MonoBehaviour
     }
     private void Fire()
     {
-        GameObject shell = Instantiate(
+        Instantiate(
             bulletPrefab,
             bulletSpawn.position,
-            bulletSpawn.rotation);
-
-        Rigidbody rb = shell.GetComponent<Rigidbody>();
-
-        rb.linearVelocity = bulletSpeed * cannon.forward;
+            cannon.rotation);
     }
     private void RotateTowardsPlayer()
     {
@@ -483,5 +469,7 @@ public class AIController : MonoBehaviour
 
         rb.linearVelocity = bulletSpeed * cannon.forward;
     }
+
+    
 
 }

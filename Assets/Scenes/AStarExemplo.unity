@@ -482,7 +482,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -977,7 +976,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -1863,7 +1861,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -1996,7 +1993,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -2129,7 +2125,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -2183,7 +2178,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -2316,7 +2310,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -2528,7 +2521,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -2763,7 +2755,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -2975,7 +2966,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -3029,7 +3019,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -3162,7 +3151,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -3374,7 +3362,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -3869,7 +3856,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -4104,7 +4090,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -4418,7 +4403,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -4630,7 +4614,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -4684,7 +4667,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -5077,7 +5059,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -5312,7 +5293,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -5701,7 +5681,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -6412,7 +6391,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -6466,7 +6444,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -6678,7 +6655,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -6811,7 +6787,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -6865,7 +6840,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -7258,7 +7232,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -7640,7 +7613,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -8399,7 +8371,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -8532,7 +8503,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -8912,7 +8882,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -9055,7 +9024,6 @@ MonoBehaviour:
   endMaterial: {fileID: 2100000, guid: 885a7077dcaae854ea4102683ae22765, type: 2}
   gameStatus: 0
   toggle: {fileID: 1363020422}
-  text: {fileID: 396965148}
 --- !u!1 &497761009
 GameObject:
   m_ObjectHideFlags: 0
@@ -9105,7 +9073,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -9419,7 +9386,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -9870,7 +9836,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -10003,7 +9968,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -10317,7 +10281,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -10450,7 +10413,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -10764,7 +10726,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -11078,7 +11039,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -11392,7 +11352,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -11785,7 +11744,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -12201,7 +12159,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -12413,7 +12370,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -12908,7 +12864,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -13867,7 +13822,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -14000,7 +13954,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -14212,7 +14165,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -14345,7 +14297,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -14399,7 +14350,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -14532,7 +14482,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -14877,7 +14826,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -15632,7 +15580,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -15765,7 +15712,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -16345,7 +16291,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -16792,7 +16737,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -16846,7 +16790,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -17160,7 +17103,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -17734,7 +17676,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -18048,7 +17989,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -18645,7 +18585,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -19841,7 +19780,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -19895,7 +19833,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -20028,7 +19965,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -20421,7 +20357,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -20554,7 +20489,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -20789,7 +20723,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -21103,7 +21036,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -21236,7 +21168,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -21629,7 +21560,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -21683,7 +21613,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -22257,7 +22186,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -22571,7 +22499,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -22971,7 +22898,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -23025,7 +22951,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -23892,7 +23817,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -24127,7 +24051,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -24260,7 +24183,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -24393,7 +24315,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -25573,7 +25494,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -25706,7 +25626,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -25918,7 +25837,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -26153,7 +26071,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -26365,7 +26282,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -26600,7 +26516,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -27276,7 +27191,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -27771,7 +27685,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -28345,7 +28258,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -28580,7 +28492,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -28713,7 +28624,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -29106,7 +29016,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -30318,7 +30227,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -30787,7 +30695,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -31371,7 +31278,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -31685,7 +31591,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -32259,7 +32164,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -32333,7 +32237,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FSMAIController
   anim: {fileID: 2015051389}
   AiController: {fileID: 2079253917}
-  attackDistance: 3
+  attackDistance: 7
   detectionRadius: 5
   visionCheckInterval: 0.5
   visionLayer:
@@ -32750,7 +32654,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -32883,7 +32786,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -32998,7 +32900,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pathfinding: {fileID: 488419836}
-  mainCamera: {fileID: 0}
   patrolPoints:
   - {fileID: 693266284}
   - {fileID: 1352518650}
@@ -33096,7 +32997,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -33308,7 +33208,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0
@@ -33543,7 +33442,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  neighbors: []
   gCost: 0
   hCost: 0
   fCost: 0

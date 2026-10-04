@@ -15,39 +15,10 @@ public class AStarPathfindingOpt : MonoBehaviour
     public enum GameStatus { None, SelectStart, SelectEnd, Ready };
     public GameStatus gameStatus = GameStatus.None;
     public Toggle toggle;
-    public TMPro.TextMeshProUGUI text;
 
     void Start()
     {
         grid = new List<AStarNodeOpt>(FindObjectsByType<AStarNodeOpt>(FindObjectsSortMode.None));
-        text.text = "Selecione o nó inicial e o nó final entre os nós brancos. Se desenar visualizar passo a passo, marque a referida caixa.";
-    }
-
-    public void SelectStartNode()
-    {
-        if (gameStatus != GameStatus.None) return;
-
-        gameStatus = GameStatus.SelectStart;
-        text.text = "Clique no nó inicial (branco) para iniciar o caminho.";
-    }
-
-    public void SetStartNode(AStarNodeOpt node)
-    {
-        if (startNode != null) startNode.SetMaterial(gridMaterial);
-
-        startNode = node;
-        node.SetMaterial(startMaterial);
-        gameStatus = GameStatus.SelectEnd;
-        text.text = "Clique no nó final (branco) para finalizar o caminho.";
-    }
-
-    public void SetEndNode(AStarNodeOpt node)
-    {
-        if (endNode != null) endNode.SetMaterial(gridMaterial);
-        endNode = node;
-        node.SetMaterial(endMaterial);
-        gameStatus = GameStatus.Ready;
-        text.text = "Clique calcular rota para iniciar o caminho.";
     }
 
     public void StartAStar()
@@ -63,7 +34,6 @@ public class AStarPathfindingOpt : MonoBehaviour
 
         if (startNode == null || endNode == null || gameStatus != GameStatus.Ready)
         {
-            text.text = "Os nós inicial e final não foram definidos.";
             return;
         }
 
@@ -75,14 +45,8 @@ public class AStarPathfindingOpt : MonoBehaviour
         openList.Add(currentNode);
         currentNode.CalculateCost(startNode, endNode, -1);
 
-        if (toggle.isOn)
-        {
-            InvokeRepeating("CalculatePath", 0f, 0.5f);
-        }
-        else
-        {
-            CalculatePath();
-        }
+        CalculatePath();
+        
     }
 
     void CalculatePath()
@@ -111,7 +75,6 @@ public class AStarPathfindingOpt : MonoBehaviour
 
         if (openList.Count == 0)
         {
-            text.text = "Não foi possível encontrar um caminho.";
             CancelInvoke("CalculatePath");
             gameStatus = GameStatus.None;
             return;

@@ -163,10 +163,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 518dcd8083c41d1488a46d98ef5c7673, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MoveShell
-  speed: 3
+  speed: 10
   mass: 1
   drag: 1
-  force: 2
+  force: 5
 --- !u!114 &3273099696965239992
 MonoBehaviour:
   m_ObjectHideFlags: 0

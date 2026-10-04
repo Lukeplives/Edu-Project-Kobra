@@ -10,6 +10,7 @@ public class AttackBehavior : StateMachineBehaviour
         anim = animator;
         controller = anim.GetComponentInParent<FSMAIController>();
 
+        controller.AiController.StopMovement();
         controller.AiController.StartAttack();
 
     }
