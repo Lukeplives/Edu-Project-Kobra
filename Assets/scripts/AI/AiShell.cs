@@ -15,11 +15,20 @@ public class AiShell : MonoBehaviour
     {
         if(collider.gameObject.tag == "Player")
         {
-            //GameObject exp = Instantiate(explosion,transform.position, Quaternion.identity);
-            //Destroy(exp, 0.5f);
+            GameObject exp = Instantiate(explosion,transform.position, Quaternion.identity);
+            Destroy(exp, 0.5f);
             Health playerHealth = collider.gameObject.GetComponent<Health>();
             playerHealth.LoseHealth(damage);
             Destroy(gameObject);
+        }
+        else
+        {
+            if(collider.CompareTag("Ground") || collider.CompareTag("Obstacle"))
+            {
+                GameObject exp = Instantiate(explosion, this.transform.position, Quaternion.identity);
+                Destroy(exp, 0.5f);
+                
+            }
         }
     }
 

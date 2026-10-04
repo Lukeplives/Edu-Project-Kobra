@@ -58,6 +58,12 @@ public class FSMAIController : MonoBehaviour
     {
         direction.Normalize();
 
+            Debug.DrawRay(
+        transform.position,
+        direction * distance,
+        playerVisible ? Color.green : Color.red
+    );
+
         if (Physics.Raycast(
             transform.position,
             direction,
