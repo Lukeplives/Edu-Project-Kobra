@@ -45,11 +45,11 @@ public class Drive : MonoBehaviour
 
         if(rotateUp.action.IsPressed())
         {
-            cannon.RotateAround(cannon.position, cannon.forward, -30 * Time.deltaTime);
+            cannon.RotateAround(cannon.position, cannon.right, -30 * Time.deltaTime);
         }
         else if(rotateDown.action.IsPressed())
         {
-            cannon.RotateAround(cannon.position, cannon.forward, 30 * Time.deltaTime);
+            cannon.RotateAround(cannon.position, cannon.right, 30 * Time.deltaTime);
         }
 
         if(Mouse.current.leftButton.wasPressedThisFrame)

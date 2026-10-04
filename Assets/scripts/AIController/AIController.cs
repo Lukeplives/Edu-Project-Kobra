@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class AIController : MonoBehaviour
 {
-    [Header("References")]
-    [SerializeField] private AStarPathfindingOpt pathfinding;
-    [SerializeField] private AStarNodeOpt[] patrolPoints;
 
     [Header("Movement")]
     [SerializeField] private float moveSpeed = 3f;
@@ -14,10 +11,11 @@ public class AIController : MonoBehaviour
     [SerializeField] private float rotationSpeed = 5f;
 
     [Header("References")]
-    [SerializeField] private AStarPathfindingOpt pathfindingOpt;
     [SerializeField] private Transform target;
     public Transform Target => target;
     [SerializeField] private EnemyData enemyData;
+    [SerializeField] private AStarPathfindingOpt pathfinding;
+    [SerializeField] private AStarNodeOpt[] patrolPoints;
     private Health health;
 
     [Header("Combat")]
@@ -384,7 +382,7 @@ public class AIController : MonoBehaviour
         Instantiate(
             bulletPrefab,
             bulletSpawn.position,
-            cannon.rotation);
+            bulletSpawn.rotation);
     }
     private void RotateTowardsPlayer()
     {
